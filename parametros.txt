@@ -1,0 +1,32 @@
+<xs:schema xmlns:tns="http://pd.tsi.ifpb.edu.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://pd.tsi.ifpb.edu.br/">
+<xs:element name="buscaClientePorCPF" type="tns:buscaClientePorCPF"/>
+<xs:element name="buscaClientePorCPFResponse" type="tns:buscaClientePorCPFResponse"/>
+<xs:element name="insereCliente" type="tns:insereCliente"/>
+<xs:element name="insereClienteResponse" type="tns:insereClienteResponse"/>
+<xs:complexType name="buscaClientePorCPF">
+<xs:sequence>
+<xs:element name="cpf" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="buscaClientePorCPFResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="cliente">
+<xs:sequence>
+<xs:element name="cpf" type="xs:string" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="insereCliente">
+<xs:sequence>
+<xs:element name="cliente" type="tns:cliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="insereClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
